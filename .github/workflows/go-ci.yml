@@ -33,3 +33,6 @@ jobs:
 
             - name: Build Go binary
               run: go build -o ./server main.go
+
+            - name: Show directory contents
+              run: ls -la
