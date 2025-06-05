@@ -34,5 +34,12 @@ jobs:
             - name: Build Go binary
               run: go build -o ./server main.go
 
-            - name: Show directory contents
-              run: ls -la
+            - name: Build and tag Docker image
+              run: |
+                docker build -t ${{ secrets.prashantbhilwar}}/go-task-api:latest
+
+            - name: Login to Docker Hub
+              run: echo "${{secrets.Prashant619@}}" | docker login -u ${{secrets.prashantbhilwar}} --password-stdin
+
+            - name: Push Docker image to Docker Hub
+              run: docker push ${{secrets.prashantbhilwar}}/go-task-api:latest
