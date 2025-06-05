@@ -24,7 +24,6 @@ jobs:
               with:
                 version: v1.57.2
                 args: ./...
-                working-directory: ${{ github.workspace }}
 
             - name: Download dependencies
               run: go mod download
