@@ -23,6 +23,8 @@ jobs:
               uses: golangci/golangci-lint-action@v3
               with:
                 version: v1.57.2
+                args: ./...
+                working-directory: .
 
             - name: Download dependencies
               run: go mod download
