@@ -36,10 +36,10 @@ jobs:
 
             - name: Build and tag Docker image
               run: |
-                docker build -t ${{ secrets.prashantbhilwar}}/go-task-api:latest
+                docker build -t ${{ secrets.DOCKER_USERNAME}}/go-task-api:latest
 
             - name: Login to Docker Hub
-              run: echo "${{secrets.Prashant619@}}" | docker login -u ${{secrets.prashantbhilwar}} --password-stdin
+              run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USERNAME}} --password-stdin
 
             - name: Push Docker image to Docker Hub
-              run: docker push ${{secrets.prashantbhilwar}}/go-task-api:latest
+              run: docker push ${{secrets.DOCKER_USERNAME}}/go-task-api:latest
